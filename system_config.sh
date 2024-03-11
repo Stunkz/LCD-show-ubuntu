@@ -32,10 +32,16 @@ sudo cp -rf ./boot/config-nomal-20.10-32.txt ./boot/config.txt.bak
 elif [ $hardware_arch -eq 64 ]; then
 sudo cp -rf ./boot/config-nomal-20.10-64.txt ./boot/config.txt.bak
 fi
-elif [[ "$version" = "22.04" ]] || [[ "$version" > "22.04" ]]; then
+elif [[ "$version" = "22.04" ]] || [[ "$version" < "23.10" ]]; then
 if [ $hardware_arch -eq 32 ]; then
 sudo cp -rf ./boot/config-nomal-22.04-32.txt ./boot/config.txt.bak
 elif [ $hardware_arch -eq 64 ]; then
 sudo cp -rf ./boot/config-nomal-22.04-64.txt ./boot/config.txt.bak
+fi
+elif [[ "$version" = "23.10" ]]; then
+if [ $hardware_arch -eq 32 ]; then
+sudo cp -rf ./boot/config-nomal-23.10-32.txt ./boot/config.txt.bak
+elif [ $hardware_arch -eq 64 ]; then
+sudo cp -rf ./boot/config-nomal-23.10-64.txt ./boot/config.txt.bak
 fi
 fi
